@@ -1,22 +1,38 @@
 [
     {
-        "arguments": [12],
+        "arguments": [
+            12
+        ],
         "result": ""
     },
     {
-        "arguments": ["Hello World"],
+        "arguments": [
+            "Hello World"
+        ],
         "result": "helloWorld"
     },
     {
-        "arguments": [" Hello    World  "],
+        "arguments": [
+            " Hello    World  "
+        ],
         "result": "helloWorld"
     },
     {
-        "arguments": ["Hello World!\nWhat\tis up?"],
+        "arguments": [
+            "Hello World!\nWhat\tis up?"
+        ],
         "result": "helloWorldWhatIsUp"
     },
     {
-        "arguments": ["Hello World ! 123 What is up?"],
+        "arguments": [
+            "Hello World ! 123 What is up?"
+        ],
+        "result": "helloWorld123WhatIsUp"
+    },
+    {
+        "arguments": [
+            "Hello World!     123 What! is up?"
+        ],
         "result": "helloWorld123WhatIsUp"
     }
 ]

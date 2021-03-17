@@ -7,43 +7,68 @@
     },
     {
         "arguments": [
-            [1, 2, 3]
+            [
+                1,
+                2,
+                3
+            ]
         ],
         "result": true
     },
     {
         "arguments": [
-            ["hello", "world"]
+            [
+                "hello",
+                "world"
+            ]
         ],
         "result": true
     },
     {
         "arguments": [
-            ["world", "hello"]
+            [
+                "world",
+                "hello"
+            ]
         ],
         "result": false
     },
     {
         "arguments": [
-            ["Hello", "hELLO"]
+            [
+                "Hello",
+                "hELLO"
+            ]
         ],
         "result": true
     },
     {
         "arguments": [
-            [1, 11, 12, 2, 3]
+            [
+                1,
+                11,
+                12,
+                2,
+                3
+            ]
         ],
         "result": true
     },
     {
         "arguments": [
-            ["he llo\n", "h\tello"]
+            [
+                "he llo\n",
+                "h\tello"
+            ]
         ],
         "result": true
     },
     {
         "arguments": [
-            ["Hello!", "He!llo"],
+            [
+                "Hello!",
+                "He!llo"
+            ],
             "!"
         ],
         "result": true
@@ -57,5 +82,38 @@
             "!?"
         ],
         "result": true
+    },
+    {
+        "arguments": [
+            [
+                "Hello!",
+                "He!llo",
+                "hel!$l$#o"
+            ],
+            "!$#"
+        ],
+        "result": true
+    },
+    {
+        "arguments": [
+            [
+                "Hello!",
+                "he   !!$ l   l \to",
+                "hEL \n\t$l\to"
+            ],
+            "!$#"
+        ],
+        "result": true
+    },
+    {
+        "arguments": [
+            [
+                "Hello!",
+                "ha   !!$ l   l \to",
+                "hEL \n\t$l\to"
+            ],
+            "!$#"
+        ],
+        "result": false
     }
 ]

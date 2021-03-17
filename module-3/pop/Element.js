@@ -15,4 +15,70 @@
  *       the given name or throws an Erorr if it cannot
  *       find the element
  */
-module.exports = class Element {}
+//const { element } = require("../test/mock/ElementFinder");
+
+class Element {
+    constructor(name, locator) {
+        this.name = name;
+        this.locator = locator;
+
+        this.parent = null; //if you expect the value to be an object, you should set it to null first
+        this.children = {}; //in case of multiple object use {}
+    }
+
+    setParent(parent) {
+        this.parent = parent;
+    }
+
+    addChildren(child) {
+        if (this.children.hasOwnProperty(child.name)) {
+            throw new Error(child.name + " is already addeld!");
+        }
+        this.children[child.name] = child;
+    }
+
+    get(name) {
+        if (typeof name === "undefined") {
+            return element(this.locator);
+        } /* else {
+            for (let key in this.children) {
+                if (key === name) {
+                    return new ElementFinder(this.children[key].locator);
+                    //} else if (typeof this.children[key] == "object" && this.children[key] !== null && !this.children[key].children.isEmpty()) {
+                }
+                if (!(Object.keys(this.children[key].children).length === 0 && this.children[key].children.constructor === Object)) {
+                    const child = this.children[key];
+                    child.get(child.name);
+                }
+            }
+        } */
+
+
+        //while (!(Object.keys(this.children).length === 0 && this.children.constructor === Object)) {
+
+
+
+        if (this.children.hasOwnProperty(name)) {
+            return this.children[name].get();
+        } else {
+            for (let key in this.children) {
+                if (this.children[key].children.hasOwnProperty(name)) {
+                    return this.children[key].children[name].get();
+                } else {
+                    this.children[key].get(name);
+                }
+            }
+        }
+        //}
+
+
+
+        if (!this.children.hasOwnProperty(name)) {
+            throw new Error(`${name} does not exist!`);
+        }
+
+        //return this.children[name].get();
+    }
+}
+
+module.exports = Element;

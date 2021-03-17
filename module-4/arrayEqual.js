@@ -11,3 +11,29 @@
  * @returns {boolean} true if the two arrays are equal,
  *                    false otherwise
  */
+
+function arrayEquals(arrA, arrB) {
+    if (!Array.isArray(arrA) || !Array.isArray(arrB)) {
+        return false;
+    }
+
+    if (arrA.length !== arrB.length) {
+        console.warn(`different array length: ${arrA.length}, ${arrB.length}`);
+        return false;
+    }
+
+    for (let i = 0; i < arrA.length; i++) {
+        if (Array.isArray(arrA[i]) && Array.isArray(arrB[i])) {
+            return arrayEquals(arrA[i], arrB[i]);
+        }
+
+        if (arrA[i] !== arrB[i]) {
+            console.warn(`different array items: ${arrA[i]}, ${arrB[i]}`);
+            return false;
+        }
+    }
+
+    return true;
+}
+
+module.exports = arrayEquals;

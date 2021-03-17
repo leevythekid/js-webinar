@@ -1,0 +1,50 @@
+[
+    {
+        "arguments": [
+            "I"
+        ],
+        "result": 1
+    },
+    {
+        "arguments": [
+            "II"
+        ],
+        "result": 2
+    },
+    {
+        "arguments": [
+            "VI"
+        ],
+        "result": 6
+    },
+    {
+        "arguments": [
+            "IX"
+        ],
+        "result": 9
+    },
+    {
+        "arguments": [
+            "XII"
+        ],
+        "result": 12
+    },
+    {
+        "arguments": [
+            "IXL"
+        ],
+        "result": 39
+    },
+    {
+        "arguments": [
+            "LV"
+        ],
+        "result": 55
+    },
+    {
+        "arguments": [
+            "LVIII"
+        ],
+        "result": 58
+    }
+]
