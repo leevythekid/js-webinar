@@ -2,7 +2,7 @@ const romanToDec = require('../romanToDec');
 const expect = require('chai').expect;
 const testData = require('./romanToDec.json');
 
-describe.only('Module 4 - romanToDec', () => {
+describe('Module 4 - romanToDec', () => {
     it('should be a function', () => {
         expect(romanToDec).to.be.instanceOf(Function);
     });

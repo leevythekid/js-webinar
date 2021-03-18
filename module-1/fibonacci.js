@@ -27,7 +27,6 @@ function fibonacci(n) {
                 f1 = sum;
             }
             nThFibonacci = f1;
-            //return fibonacci(n-2) + fibonacci(n-1);
         }
     } else {
         nThFibonacci = 0;

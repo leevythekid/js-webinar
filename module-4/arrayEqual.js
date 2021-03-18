@@ -12,23 +12,23 @@
  *                    false otherwise
  */
 
-function arrayEquals(arrA, arrB) {
-    if (!Array.isArray(arrA) || !Array.isArray(arrB)) {
+function arrayEquals(first, second) {
+    if (!Array.isArray(first) || !Array.isArray(second)) {
         return false;
     }
 
-    if (arrA.length !== arrB.length) {
-        console.warn(`different array length: ${arrA.length}, ${arrB.length}`);
+    if (first.length !== second.length) {
+        console.warn(`different array length: ${first.length}, ${second.length}`);
         return false;
     }
 
-    for (let i = 0; i < arrA.length; i++) {
-        if (Array.isArray(arrA[i]) && Array.isArray(arrB[i])) {
-            return arrayEquals(arrA[i], arrB[i]);
+    for (let i = 0; i < first.length; i++) {
+        if (Array.isArray(first[i]) && Array.isArray(second[i])) {
+            return arrayEquals(first[i], second[i]);
         }
 
-        if (arrA[i] !== arrB[i]) {
-            console.warn(`different array items: ${arrA[i]}, ${arrB[i]}`);
+        if (first[i] !== second[i]) {
+            console.warn(`different array items: ${first[i]}, ${second[i]}`);
             return false;
         }
     }

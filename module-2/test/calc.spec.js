@@ -34,8 +34,18 @@ describe.only('calc', () => {
             const result = c.add(5).v;
             expect(result).to.be.equal(8);
         });
-        //TODO
-        //negative, 0
+
+        it("should be able to add a negative number to the current value", () => {
+            const c = calc(3);
+            const result = c.add(-3).v;
+            expect(result).to.be.equal(0);
+        });
+
+        it("should be able to add a negative number to the current value", () => {
+            const c = calc(3);
+            const result = c.add(-5).v;
+            expect(result).to.be.equal(-2);
+        });
     });
 
     describe("minus", () => {
@@ -49,8 +59,24 @@ describe.only('calc', () => {
             const result = c.minus(2).v;
             expect(result).to.be.equal(1);
         });
-        //TODO
-        //negative, 0
+
+        it("should be able to substract a number from the current value", () => {
+            const c = calc(3);
+            const result = c.minus(3).v;
+            expect(result).to.be.equal(0);
+        });
+
+        it("should be able to substract a number from the current value", () => {
+            const c = calc(3);
+            const result = c.minus(10).v;
+            expect(result).to.be.equal(-7);
+        });
+
+        it("should be able to substract a negative number from the current value", () => {
+            const c = calc(3);
+            const result = c.minus(-3).v;
+            expect(result).to.be.equal(6);
+        });
     });
 
     describe("times", () => {
@@ -64,7 +90,7 @@ describe.only('calc', () => {
             const result = c.times(10).v;
             expect(result).to.be.equal(30);
         });
-        //negative, 0
+
         it("should be able to multiply the current value by a negative number", () => {
             const c = calc(3);
             const result = c.times(-10).v;

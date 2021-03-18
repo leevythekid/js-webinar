@@ -2,7 +2,7 @@ const arraySorted = require('../arraySorted');
 const expect = require('chai').expect;
 const testData = require('./arraySorted.json');
 
-describe.only('Module 4 - arraySorted', () => {
+describe('Module 4 - arraySorted', () => {
     it('should be a function', () => {
         expect(arraySorted).to.be.instanceOf(Function);
     });

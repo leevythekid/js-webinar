@@ -7,14 +7,14 @@
  * @returns {string} longest string or empty string in other cases
  */
 
-function longestString(stringArray) {
-    if (!Array.isArray(stringArray) || stringArray.length < 1) {
+function longestString(strings) {
+    if (!Array.isArray(strings) || strings.length < 1) {
         return "";
     }
 
     var longestWord = "";
 
-    for (word of stringArray) {
+    for (word of strings) {
         if (typeof word === "string") {
             if (word.length > longestWord.length)
                 longestWord = word;

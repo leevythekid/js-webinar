@@ -14,14 +14,7 @@ function arraySum(arr) {
         return sum;
     }
 
-    arr.forEach(element => {
-        if (Array.isArray(element)) {
-            sum += arraySum(element);
-        } else if (typeof element === "number") {
-            sum += element;
-        }
-    });
-
+    // Solution #1 - iteration
     /* arr = arr.flat(Infinity);
 
     arr.forEach(element => {
@@ -29,6 +22,15 @@ function arraySum(arr) {
             sum += element;
         }
     }); */
+
+    // Solution #2 - recursion
+    arr.forEach(element => {
+        if (Array.isArray(element)) {
+            sum += arraySum(element);
+        } else if (typeof element === "number") {
+            sum += element;
+        }
+    });
 
     return sum;
 }

@@ -40,23 +40,7 @@ class Element {
     get(name) {
         if (typeof name === "undefined") {
             return element(this.locator);
-        } /* else {
-            for (let key in this.children) {
-                if (key === name) {
-                    return new ElementFinder(this.children[key].locator);
-                    //} else if (typeof this.children[key] == "object" && this.children[key] !== null && !this.children[key].children.isEmpty()) {
-                }
-                if (!(Object.keys(this.children[key].children).length === 0 && this.children[key].children.constructor === Object)) {
-                    const child = this.children[key];
-                    child.get(child.name);
-                }
-            }
-        } */
-
-
-        //while (!(Object.keys(this.children).length === 0 && this.children.constructor === Object)) {
-
-
+        }
 
         if (this.children.hasOwnProperty(name)) {
             return this.children[name].get();
@@ -69,9 +53,6 @@ class Element {
                 }
             }
         }
-        //}
-
-
 
         if (!this.children.hasOwnProperty(name)) {
             throw new Error(`${name} does not exist!`);

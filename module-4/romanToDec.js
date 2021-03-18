@@ -1,4 +1,5 @@
 /**
+ * I got some help with the solution from the following video:
  * https://www.youtube.com/watch?v=hEhf_oz3wsM
  * 
  * It recieves a Roman number (as string)
